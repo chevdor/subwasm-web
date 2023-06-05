@@ -4,20 +4,32 @@
 // When compiling natively:
 #[cfg(not(target_arch = "wasm32"))]
 fn main() -> eframe::Result<()> {
+    use log::debug;
+
+    env_logger::init();
+    debug!("this is a debug {}", "message");
+
     // Log to stdout (if you run with `RUST_LOG=debug`).
     tracing_subscriber::fmt::init();
+    println!("test");
 
     let native_options = eframe::NativeOptions::default();
     eframe::run_native(
-        "eframe template",
+        "Subwasm Web",
         native_options,
-        Box::new(|cc| Box::new(eframe_template::TemplateApp::new(cc))),
+        Box::new(|cc| Box::new(subwasm_web::SubwasmApp::new(cc))),
     )
 }
 
 // when compiling to web using trunk.
 #[cfg(target_arch = "wasm32")]
 fn main() {
+    use log::debug;
+
+    env_logger::init();
+    debug!("this is a debug {}", "message");
+    println!("test");
+
     // Make sure panics are logged using `console.error`.
     console_error_panic_hook::set_once();
 
@@ -30,7 +42,7 @@ fn main() {
         eframe::start_web(
             "the_canvas_id", // hardcode it
             web_options,
-            Box::new(|cc| Box::new(eframe_template::TemplateApp::new(cc))),
+            Box::new(|cc| Box::new(subwasm_web::SubwasmApp::new(cc))),
         )
         .await
         .expect("failed to start eframe");

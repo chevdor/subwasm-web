@@ -1,2 +1,4 @@
 /target
 /dist
+.env*
+!.env-example

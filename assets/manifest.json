@@ -1,6 +1,6 @@
 {
-  "name": "egui Template PWA",
-  "short_name": "egui-template-pwa",
+  "name": "Subwasm Web",
+  "short_name": "subwasm-web",
   "icons": [
     {
       "src": "./icon-256.png",
