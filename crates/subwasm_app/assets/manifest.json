@@ -1,6 +1,6 @@
 {
-  "name": "Subwasm Web",
-  "short_name": "subwasm-web",
+  "name": "Subwasm App",
+  "short_name": "subwasm-app",
   "icons": [
     {
       "src": "./icon-256.png",
