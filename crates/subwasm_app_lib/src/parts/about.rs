@@ -55,8 +55,6 @@ fn about_things(ui: &mut egui::Ui) {
 
 	ui.add_space(8.0);
 
-	ui.add_space(8.0);
-
 	ui.label("Note how there are no callbacks or messages, and no button state to store.");
 
 	ui.label("Immediate mode has its roots in gaming, where everything on the screen is painted at the display refresh rate, i.e. at 60+ frames per second. \

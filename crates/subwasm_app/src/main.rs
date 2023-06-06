@@ -28,14 +28,10 @@ fn main() {
 
 	wasm_bindgen_futures::spawn_local(async {
 		eframe::WebRunner::new()
-			.start(
-				"canvas",
-				web_options,
-				Box::new(|cc| Box::new(subwasm_app::SubwasmApp::new(cc))),
-			)
+			.start("canvas", web_options, Box::new(|cc| Box::new(subwasm_app::SubwasmApp::new(cc))))
 			.await
 			.expect("failed to start eframe");
-        log::debug!("Starting...");
-        println!("Starttting")
+		log::debug!("Starting...");
+		println!("Starttting")
 	});
 }

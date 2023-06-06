@@ -36,9 +36,6 @@ pub struct SubwasmApp {
 impl Default for SubwasmApp {
 	fn default() -> Self {
 		Self {
-			// Example stuff:
-			// label: "Hello World!".to_owned(),
-			// value: 2.7,
 			data_1: None,
 			// open_file_dialog: None,
 			promise: None,
@@ -100,8 +97,8 @@ impl eframe::App for SubwasmApp {
 			// label, value
 			data_1,
 			// open_file_dialog,
-			promise: None,
-			show_about: false,
+			promise,
+			show_about,
 			windows,
 		} = self
 		 else {
@@ -241,7 +238,6 @@ impl eframe::App for SubwasmApp {
 			// The central panel the region left after adding TopPanel's and SidePanel's
 
 			ui.heading("Subwasm Web");
-			ui.hyperlink("https://github.com/chevdor/subwasm");
 			// ui.add(egui::github_link_file!(
 			//     "https://github.com/chevdor/subwasm",
 			//     "Source code."
@@ -264,13 +260,22 @@ impl eframe::App for SubwasmApp {
 
 		// });
 
-		if false {
-			egui::Window::new("Window").show(ctx, |ui| {
-				ui.label("Windows can be moved by dragging them.");
-				ui.label("They are automatically sized based on contents.");
-				ui.label("You can turn on resizing and scrolling if you like.");
-				ui.label("You would normally choose either panels OR windows.");
-			});
+		if true {
+			egui::Window::new("Notice")
+				.anchor(egui::Align2::CENTER_CENTER, egui::vec2(0.0, 0.0))
+				.movable(false)
+				.resizable(false)
+				.collapsible(false)
+				.show(ctx, |ui| {
+					ui.heading("Hello!");
+
+					ui.label("This is work in progress.");
+					ui.label("come back later for more subwasm :)");
+
+					ui.add_space(8.0);
+
+					ui.hyperlink("https://github.com/chevdor/subwasm");
+				});
 		}
 	}
 }
