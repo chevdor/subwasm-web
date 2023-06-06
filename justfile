@@ -10,10 +10,10 @@ help:
 
 serve:
   #!/usr/bin/env bash
-  trunk serve crates/subwasm_app/index.html
+  trunk serve -d ./dist crates/subwasm_app/index.html
 
 build:
-  trunk build crates/subwasm_app/index.html
+  trunk build -d ./dist crates/subwasm_app/index.html
 
 # Generate the readme as .md
 md:
